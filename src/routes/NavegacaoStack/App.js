@@ -27,7 +27,7 @@ export default function Routes() {
             />
 
             <Stack.Screen
-                name="Tela4"
+                name="CardPage"
                 component={Rotas}
                 options={{ headerShown: false }}
             />

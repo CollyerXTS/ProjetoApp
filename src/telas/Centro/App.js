@@ -11,7 +11,7 @@ import DATA from '../../componentes/Card/App';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 
-export default function Tela2() {
+export default function Centro() {
   const renderItem = ({ item }) => (
     <Item
       image={item.image} data={item.data} humor={item.humor} horario={item.horario} festa={item.festa} festaTexto={item.festaTexto} esporte={item.esporte} esporteTexto={item.esporteTexto} cozinhar={item.cozinhar} cozinharTexto={item.cozinharTexto} texto={item.texto}

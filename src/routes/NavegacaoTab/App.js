@@ -3,11 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //Navegção
 import Home from '../../telas/Home/App';
-import BottonCenter from '../../telas/BottonCenter/App';
 import BottonSettings from '../../telas/SettingsList/App';
 import CardPage from '../../telas/CardPage/App';
+import Centro from '../../telas/Centro/App';
 //Pasta Componentes
-import Botton from '../../componentes/BotttonCenter';
+import BotttonCenter from '../../componentes/BotttonCenter';
 import Bottonhome from '../../componentes/Bottonhome';
 import Bottonlist from '../../componentes/Bottonlist';
 
@@ -41,11 +41,11 @@ function Rotas() {
         }}
       />
       <Tab.Screen
-        name="BottonCenters"
-        component={BottonCenter}
+        name="Centro"
+        component={Centro}
         options={{
           tabBarIcon: () => (
-            <Botton></Botton>
+            <BotttonCenter></BotttonCenter>
           )
         }}
       />

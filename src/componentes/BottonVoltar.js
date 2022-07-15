@@ -1,7 +1,6 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-//navegação
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -9,7 +8,7 @@ export default function ButtonVoltar() {
     const navigation = useNavigation();
     return (
         <TouchableOpacity
-            onPress={() => navigation.jumpTo('BottonCenter')}
+            onPress={() => navigation.jumpTo('Centro')}
             style={styles.container}>
             <MaterialCommunityIcons
                 name="chevron-left"

@@ -1,8 +1,8 @@
 import React from "react";
-import { View, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import Entypo from 'react-native-vector-icons/Entypo';
 
-export default function Button() {
+export default function ButtonCenter() {
     return (
         <View style={styles.container}>
             <Entypo
