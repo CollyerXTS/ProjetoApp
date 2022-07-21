@@ -11,7 +11,7 @@ export default function Splash() {
             <Lottie style={styles.splashLogo}
                 source={require('../../../../assets/65683-notes-animation.json')} autoPlay
                 loop={false}
-                speed={0.6}
+                speed={0.8}
                 onAnimationFinish={() => navigation.navigate('Login')}
             />
             <Text style={styles.textoSplashLogo}>

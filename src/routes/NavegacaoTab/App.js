@@ -10,6 +10,7 @@ import Centro from '../../telas/Centro/App';
 import BotttonCenter from '../../componentes/BotttonCenter';
 import Bottonhome from '../../componentes/Bottonhome';
 import Bottonlist from '../../componentes/Bottonlist';
+import AddCard from '../../telas/AddCard/App';
 
 
 
@@ -68,6 +69,15 @@ function Rotas() {
           tabBarItemStyle: {
             display: 'none'
           }
+        }}
+      />
+      <Tab.Screen
+        name="AddCard"
+        component={AddCard}
+        options={{
+          tabBarIcon: () => (
+            <Bottonlist></Bottonlist>
+          )
         }}
       />
     </Tab.Navigator >

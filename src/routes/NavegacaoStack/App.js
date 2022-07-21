@@ -4,16 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../../telas/Login/App';
 import Rotas from '../NavegacaoTab/App';
 import Splash from '../../telas/Login/Splash/Splash';
+import BottonSettings from '../../telas/SettingsList/App';
 
 const Stack = createNativeStackNavigator();
 export default function Routes() {
     return (
         <Stack.Navigator>
-            <Stack.Screen
-                name="Splash"
-                component={Splash}
-                options={{ headerShown: false }}
-            />
             <Stack.Screen
                 name="Login"
                 component={Login}
@@ -31,8 +27,6 @@ export default function Routes() {
                 component={Rotas}
                 options={{ headerShown: false }}
             />
-
-
         </Stack.Navigator>
     );
 }
