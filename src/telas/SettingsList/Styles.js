@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#rgba(0,0,0,0.2)',
+        backgroundColor: '#rgba(0,0,0,0.6)',
 
     },
     modalViewIntern: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 20,
         flexDirection: 'row',
-        marginLeft: 190
+        marginLeft: 185
     },
     modalBotao2: {
         fontFamily: 'SourceSansPro-SemiBold',
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
         marginTop: 25,
         backgroundColor: '#304FFE',
         fontSize: 15,
-
     },
     containerSair: {
         width: 343,

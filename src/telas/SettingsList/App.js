@@ -14,7 +14,7 @@ export default function BottonSettings() {
       <View>
         <View style={styles.subContainerUm}>
           <Image style={styles.imagemPeril}
-            source={require('../../../assets/Login.png')}
+            source={require('../../../assets/humores/happy.png')}
           />
         </View>
 
@@ -70,6 +70,7 @@ export default function BottonSettings() {
         <View style={styles.subContainerQuatro}>
           <TouchableOpacity
             style={styles.containerEditar}
+            onPress={() => navigation.navigate('Perfil')}
           >
             <Text style={styles.botaoTexto1}>EDITAR PERFIL
             </Text>
@@ -85,9 +86,6 @@ export default function BottonSettings() {
       </View>
 
     </View >
-
-
-
 
   );
 };

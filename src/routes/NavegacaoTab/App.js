@@ -11,6 +11,7 @@ import BotttonCenter from '../../componentes/BotttonCenter';
 import Bottonhome from '../../componentes/Bottonhome';
 import Bottonlist from '../../componentes/Bottonlist';
 import AddCard from '../../telas/AddCard/App';
+import Perfil from '../../telas/SettingsList/Perfil/App';
 
 
 
@@ -78,6 +79,18 @@ function Rotas() {
           tabBarIcon: () => (
             <Bottonlist></Bottonlist>
           )
+        }}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={Perfil}
+        options={{
+          tabBarIcon: () => (
+            <Bottonlist></Bottonlist>
+          ),
+          tabBarItemStyle: {
+            display: 'none'
+          }
         }}
       />
     </Tab.Navigator >
