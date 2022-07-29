@@ -55,8 +55,8 @@ function Rotas() {
         name="BottonSettings"
         component={BottonSettings}
         options={{
-          tabBarIcon: () => (
-            <Bottonlist></Bottonlist>
+          tabBarIcon: ({ focused }) => (
+            <Bottonlist focused={focused}></Bottonlist>
           )
         }}
       />

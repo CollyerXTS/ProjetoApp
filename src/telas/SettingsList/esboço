@@ -1,0 +1,16 @@
+const [data, setData] = useState([])
+
+async function getInformationsUse() {
+    try {
+        await api.get('/user').then(resp => { setData(resp.data); console.log(resp.data) })
+    } catch (error) {
+        console.log(error)
+    }
+}
+useEffect(() => {
+    getInformationsUse()
+}, [data]);
+
+
+
+source = {{ uri: `https://shrouded-shelf-01513.herokuapp.com${data.photo.url}` }}

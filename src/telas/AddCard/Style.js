@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         marginTop: 32
     },
     modalBotao1: {
-        fontSize: 20,
         color: '#697FFF'
     },
     textoUm: {
@@ -58,7 +57,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         marginTop: 55,
         marginStart: 30,
-        marginEnd: 21
+        marginEnd: 21,
+
 
     },
     containerEllipse: {
@@ -68,8 +68,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 5,
         paddingLeft: 1,
-
-
     },
     emojiHappy: {
         width: 43,
@@ -108,8 +106,6 @@ const styles = StyleSheet.create({
         paddingTop: 12,
         borderColor: '#000000',
         borderWidth: 1,
-
-
     },
     textoIcon: {
         color: '#000000',

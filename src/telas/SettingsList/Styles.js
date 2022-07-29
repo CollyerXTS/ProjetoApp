@@ -20,8 +20,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     subContainerTres: {
-        marginLeft: 42,
-        marginTop: 17
+        marginLeft: 23,
+        marginTop: 17,
+
+    },
+    subContainerTresView: {
+        flexDirection: 'row',
     },
     textoNome: {
         marginTop: 46,
@@ -34,16 +38,19 @@ const styles = StyleSheet.create({
         fontFamily: 'SourceSansPro-SemiBold',
         color: '#000000',
         fontSize: 15,
+        marginLeft: 5,
     },
     textoCampos2: {
         fontFamily: 'SourceSansPro-SemiBold',
         color: '#000000',
         fontSize: 15,
+        marginLeft: 5,
     },
     textoCampos3: {
         fontFamily: 'SourceSansPro-SemiBold',
         color: '#000000',
         fontSize: 15,
+        marginLeft: 5,
     },
     modalView: {
         flex: 1,

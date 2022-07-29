@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     modalView: {
         flex: 1,
         alignContent: 'center',
-        backgroundColor: '#F5F5F5',
+        backgroundColor: 'white',
 
     },
     subContainerDois: {
@@ -66,13 +66,39 @@ const styles = StyleSheet.create({
         fontFamily: 'SourceSansPro-Bold',
         marginTop: 63
     },
+    subContainerModal: {
+        borderRadius: 15,
+        marginTop: 1,
+        fontSize: 15,
+        justifyContent: 'space-evenly',
+    },
+    subContainerModalInferior: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginTop: 40,
+        marginEnd: 2,
+        marginStart: 2,
+    },
+    containerImageCircle: {
+        width: 105,
+        height: 105,
+        borderRadius: 60,
+        alignItems: 'center',
+        paddingTop: 7.5,
+        paddingLeft: 1.9
+
+    },
+    modalImage: {
+        height: 92,
+        width: 92
+    },
     subContainerTres: {
         width: 322,
         height: 52,
         borderRadius: 6,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 25,
+        marginTop: 185,
         backgroundColor: '#304FFE',
         fontSize: 15,
         marginLeft: 35
@@ -105,8 +131,11 @@ const styles = StyleSheet.create({
         paddingLeft: 17,
         fontFamily: 'SourceSansPro-SemiBold',
         marginTop: 7
-    }
-    ,
+    },
+    ContaineInputIcon: {
+        marginTop: 30,
+        marginLeft: 270
+    },
     containerQuatro: {
         alignItems: 'center',
         marginBottom: 70,

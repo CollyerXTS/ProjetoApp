@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, Modal } from 'react-native';
 import styles from './Styles';
 import { useNavigation } from '@react-navigation/native';
-
-
+import { api } from '../../services/api';
 
 
 export default function BottonSettings() {
+
   const [modalActive, setModalActive] = useState(false)
   const navigation = useNavigation();
+
   return (
     < View style={styles.containerPrincipal}>
       <View>
         <View style={styles.subContainerUm}>
           <Image style={styles.imagemPeril}
             source={require('../../../assets/humores/happy.png')}
+
           />
         </View>
 
@@ -26,15 +28,34 @@ export default function BottonSettings() {
           </Text>
         </View>
         <View style={styles.subContainerTres}>
-          <Text style={styles.textoCampos1} >
-            E-MAIL:
-          </Text>
-          <Text style={styles.textoCampos2} >
-            GÊNERO:
-          </Text>
-          <Text style={styles.textoCampos3} >
-            DATA DE NASCIMENTO:
-          </Text>
+
+          <View style={styles.subContainerTresView}>
+            <Text style={styles.textoCampos1} >
+              E-MAIL:
+            </Text>
+            <Text style={styles.textoCampos1} >
+              FULANA@GMAIL.COM
+            </Text>
+          </View>
+
+          <View style={styles.subContainerTresView}>
+            <Text style={styles.textoCampos2} >
+              GÊNERO:
+            </Text>
+            <Text style={styles.textoCampos2} >
+              FEMININO
+            </Text>
+          </View>
+
+          <View style={styles.subContainerTresView}>
+            <Text style={styles.textoCampos3} >
+              DATA DE NASCIMENTO:
+            </Text>
+            <Text style={styles.textoCampos3} >
+              15/12/1998
+            </Text>
+          </View>
+
         </View>
         <Modal
           animationType='fade'

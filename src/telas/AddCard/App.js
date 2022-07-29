@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './Style';
+import { api } from '../../services/api';
 
 
 
 export default function AddCard() {
+    const [click, setClick] = useState(false)
+    const [arrayAction, setArrayAction] = useState([])
+    const [id, setId] = useState(null)
+    const [description, setDiscription] = useState('')
+    const clickActiveEmoji = (key) => {
+        if (key == id) {
+            setId(null)
+        }
+        else {
+            setId(key)
+        }
+    }
+
+
+    const clickActiveAction = (key) => {
+        setClick(true)
+        if (arrayAction.indexOf(key) !== -1) {
+            setArrayAction(arrayAction.filter(item => item !== key))
+        }
+        else if (arrayAction.length < 3) {
+            setArrayAction([...arrayAction, key])
+        }
+    }
+
+
     return (
         <KeyboardAvoidingView style={styles.containerPrincipal}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -46,24 +72,27 @@ export default function AddCard() {
                         </Text>
 
                     </View>
-
                     <View style={styles.subContainerQuatro}>
-                        <TouchableOpacity>
-                            <View style={[styles.containerEllipse, { backgroundColor: '#304FFE' }]}>
+                        <TouchableOpacity
+                            onPress={() => clickActiveEmoji(0)}>
+                            <View style={[styles.containerEllipse, { backgroundColor: id == 0 ? '#304ffe' : 'white' }]}>
                                 <Image
                                     style={styles.emojiHappy}
                                     source={require('../../../assets/humores/radiant.png')}
-                                />
 
+                                />
                             </View>
                             <Text
-                                style={styles.textoEmoji}
+                                style={[styles.textoEmoji, { color: id == 0 ? '#304ffe' : null }]}
+
                             >
                                 RADIANTE
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.containerEllipse}>
+                        <TouchableOpacity
+                            onPress={() => clickActiveEmoji(1)}>
+
+                            <View style={[styles.containerEllipse, { backgroundColor: id == 1 ? '#304ffe' : 'white' }]}>
                                 <Image
                                     style={styles.emojiHappy}
                                     source={require('../../../assets/humores/radiant.png')}
@@ -71,13 +100,15 @@ export default function AddCard() {
 
                             </View>
                             <Text
-                                style={styles.textoEmoji}
+                                style={[styles.textoEmoji, { color: id == 1 ? '#304ffe' : null }]}
                             >
                                 FELIZ
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.containerEllipse}>
+                        <TouchableOpacity
+                            onPress={() => clickActiveEmoji(2)}>
+
+                            <View style={[styles.containerEllipse, { backgroundColor: id == 2 ? '#304ffe' : 'white' }]}>
                                 <Image
                                     style={styles.emojiHappy}
                                     source={require('../../../assets/humores/radiant.png')}
@@ -85,13 +116,15 @@ export default function AddCard() {
 
                             </View>
                             <Text
-                                style={styles.textoEmoji}
+                                style={[styles.textoEmoji, { color: id == 2 ? '#304ffe' : null }]}
                             >
                                 OK
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.containerEllipse}>
+                        <TouchableOpacity
+                            onPress={() => clickActiveEmoji(3)}>
+
+                            <View style={[styles.containerEllipse, { backgroundColor: id == 3 ? '#304ffe' : 'white' }]}>
                                 <Image
                                     style={styles.emojiHappy}
                                     source={require('../../../assets/humores/radiant.png')}
@@ -99,13 +132,14 @@ export default function AddCard() {
 
                             </View>
                             <Text
-                                style={styles.textoEmoji}
+                                style={[styles.textoEmoji, { color: id == 3 ? '#304ffe' : null }]}
                             >
                                 TRISTE
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.containerEllipse}>
+                        <TouchableOpacity
+                            onPress={() => clickActiveEmoji(4)}>
+                            <View style={[styles.containerEllipse, { backgroundColor: id == 4 ? '#304ffe' : 'white' }]}>
                                 <Image
                                     style={styles.emojiHappy}
                                     source={require('../../../assets/humores/radiant.png')}
@@ -113,7 +147,7 @@ export default function AddCard() {
 
                             </View>
                             <Text
-                                style={styles.textoEmoji}
+                                style={[styles.textoEmoji, { color: id == 4 ? '#304ffe' : null }]}
                             >
                                 ACABADO
                             </Text>
@@ -121,13 +155,13 @@ export default function AddCard() {
                     </View >
                     <View style={styles.subContainerCinco}>
                         <View style={styles.containerInferiorUm}>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(0)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(0) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
                                         name="sleep"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(0) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -137,13 +171,13 @@ export default function AddCard() {
                                     descanso
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(1)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(1) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="calendar-heart"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(1) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -153,13 +187,13 @@ export default function AddCard() {
                                     encontro
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(2)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(2) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="movie-open-star"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(2) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -171,13 +205,13 @@ export default function AddCard() {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.containerInferiorUm}>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(3)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(3) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="shopping"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(3) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -187,13 +221,13 @@ export default function AddCard() {
                                     compras
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(4)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(4) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="food"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(4) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -203,13 +237,13 @@ export default function AddCard() {
                                     boa refeição
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(5)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(5) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="party-popper"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(5) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -221,13 +255,13 @@ export default function AddCard() {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.containerInferiorUm}>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(6)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(6) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="football"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(6) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -237,13 +271,13 @@ export default function AddCard() {
                                     esporte
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(7)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(7) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="food-turkey"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(7) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -253,13 +287,13 @@ export default function AddCard() {
                                     cozinhar
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.containerIconCircle}>
+                            <TouchableOpacity onPress={() => clickActiveAction(8)}>
+                                <View style={[styles.containerIconCircle, { backgroundColor: click && arrayAction.indexOf(8) !== -1 ? '#304ffe' : 'white' }]}>
                                     <MaterialCommunityIcons
                                         style={styles.ContainerIcons}
-                                        name="sleep"
+                                        name="nintendo-game-boy"
                                         size={35}
-                                        color='#000000'
+                                        color={click && arrayAction.indexOf(8) !== -1 ? '#fff' : '#000'}
                                     />
 
                                 </View>
@@ -275,6 +309,7 @@ export default function AddCard() {
                     <View style={styles.subContainerSeis}>
                         <TextInput style={styles.subContainerTexto}
                             placeholder='Escreva aqui oque aconteceu hoje...'
+                            onChangeText={(textoDigitado) => setDiscription(textoDigitado)}
                         >
 
                         </TextInput>
@@ -293,5 +328,5 @@ export default function AddCard() {
                 </View>
             </ScrollView >
         </KeyboardAvoidingView>
-    );
-};
+    )
+}

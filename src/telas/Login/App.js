@@ -4,29 +4,80 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './Style';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { api } from '../../services/api';
 
 export default function Login() {
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const [passHide, setPassHide] = useState(true);
   const [email, setEmail] = useState('');
   const [errorLogin, setErrorLogin] = useState(false);
 
-  const validar = () => {
-    const regex1 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
+  const validarEmail = () => {
     const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (regex.test((email).toLowerCase()) && regex1.test(senha)) {
-      navigation.navigate('Home')
+    if (regex.test(email.toLowerCase())) {
+      return true
+      //navigation.navigate('Home')
     }
     else {
-      setErrorLogin(true)
+      return false
+
     }
   }
+  const validarSenha = () => {
+    const regex1 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
+    if (regex1.test(password)) {
+      return true
+    }
+    else {
+      return false
+
+    }
+  }
+
 
   useEffect(() => {
     BackHandler.addEventListener('hardwareBackPress', () => {
       return true
     })
   }, [])
+  function validacaoInput() {
+    if (validarEmail() && validarSenha()) {
+
+      validacaoApi()
+    }
+    else {
+      setErrorLogin(true)
+      setTimeout(() => {
+        setErrorLogin(false)
+      }, 10000);
+      console.log('errado')
+    }
+  }
+
+  async function validacaoApi() {
+    try {
+      await api.post('/oauth/token', {
+        'grant_type': 'password',
+        'email': email,
+        'password': password,
+        'client_id': '3mGWGtxIEKyhq_HGG4cq6hsTOd_zn1SuTD3_cafjUPc',
+        'client_secret': '389JLi1Nd6DQ_soCI85C57ueTlMZ_JR7pRq6SJ0GaB0',
+      })
+        .then((resp) => {
+          navigation.navigate('Home')
+          api.defaults.headers.common['Authorization'] = `Bearer ${resp.data.access_token}`
+        })
+    }
+    catch (error) {
+      console.log(error)
+      setErrorLogin(true)
+      setTimeout(() => {
+        setErrorLogin(false)
+      }, 10000);
+    }
+  }
+
+
 
   const navigation = useNavigation();
 
@@ -44,14 +95,16 @@ export default function Login() {
           placeholder='E-mail'
           onChangeText={value => setEmail(value)}
           keyboardType="email-address"
+          defaultValue={'anderson@gmail.com'}
         />
         <View style={styles.containerInputSenha}>
           <TextInput
             placeholder='senha'
             style={styles.inputSenha}
-            value={senha}
-            onChangeText={value => setSenha(value)}
+            value={password}
+            onChangeText={value => setPassword(value)}
             secureTextEntry={passHide}
+            defaultValue={'Anderson@123'}
           />
           <TouchableOpacity style={styles.iconEye} onPress={() => setPassHide(!passHide)}>
             <Ionicons
@@ -119,7 +172,7 @@ export default function Login() {
       }
       <TouchableOpacity
         style={styles.containerBotao}
-        onPress={validar}
+        onPress={validacaoInput}
       >
         <Text style={styles.botaoTexto}>ENTRAR</Text>
       </TouchableOpacity>
