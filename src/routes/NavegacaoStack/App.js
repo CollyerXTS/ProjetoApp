@@ -14,31 +14,23 @@ export default function Routes() {
             <Stack.Screen
                 name="Splash"
                 component={Splash}
-                options={{ headerShown: false }}
-
-            />
+                options={{ headerShown: false }} />
             <Stack.Screen
                 name="Login"
                 component={Login}
-                options={{ headerShown: false }}
-
-            />
+                options={{ headerShown: false }} />
             <Stack.Screen
                 name="Home"
                 component={Rotas}
-                options={{ headerShown: false }}
-            />
-
+                options={{ headerShown: false }} />
             <Stack.Screen
                 name="CardPage"
                 component={Rotas}
-                options={{ headerShown: false }}
-            />
+                options={{ headerShown: false }} />
             <Stack.Screen
                 name="Perfil"
                 component={Perfil}
-                options={{ headerShown: false }}
-            />
+                options={{ headerShown: false }} />
         </Stack.Navigator>
     );
 }

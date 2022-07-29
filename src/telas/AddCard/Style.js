@@ -38,12 +38,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         fontFamily: 'SourceSansPro-Regular',
         marginTop: 12
-
     },
     textoDois: {
         marginLeft: 4,
         fontSize: 16
-
     },
     iconDois: {
         marginLeft: 20
@@ -58,8 +56,6 @@ const styles = StyleSheet.create({
         marginTop: 55,
         marginStart: 30,
         marginEnd: 21,
-
-
     },
     containerEllipse: {
         width: 52,
@@ -146,15 +142,11 @@ const styles = StyleSheet.create({
         marginTop: 25,
         backgroundColor: '#304FFE',
         fontSize: 15,
-
-
     },
     textoBotaoConfirmar: {
         fontFamily: 'SourceSansPro-Bold',
         color: '#FFFFFF',
         fontSize: 15,
-
-
     }
 });
 export default styles

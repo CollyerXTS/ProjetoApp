@@ -19,8 +19,7 @@ export default function CardPage() {
             <View style={styles.horario}>
                 <MaterialCommunityIcons
                     name='clock-time-three-outline'
-                    size={12}
-                />
+                    size={12} />
                 <Text>
                     {horario}
                 </Text>
@@ -28,8 +27,7 @@ export default function CardPage() {
             <View style={styles.data}>
                 <MaterialCommunityIcons
                     name='calendar-month-outline'
-                    size={12}
-                />
+                    size={12} />
                 <Text>
                     {data}
                 </Text>
@@ -47,20 +45,17 @@ export default function CardPage() {
 
                     <View style={styles.elipseUm}>
                         <Image style={styles.festa}
-                            source={festa}
-                        />
+                            source={festa} />
                     </View>
                     <View style={styles.elipseDois}>
                         <Image style={styles.esporte}
-                            source={esporte}
-                        />
+                            source={esporte} />
                     </View>
                     <View style={styles.elipseTres}>
                         <Image style={styles.cozinhar}
-                            source={cozinhar}
-                        />
+                            source={cozinhar} />
                     </View>
-                </View >
+                </View>
                 <View style={styles.subContainerDois}>
                     <Text style={styles.festaTexto}>
                         {festaTexto}

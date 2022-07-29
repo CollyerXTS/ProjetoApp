@@ -13,15 +13,10 @@ export default function ButtonVoltar() {
             <MaterialCommunityIcons
                 name="chevron-left"
                 size={22}
-                color='#304FFE'
-
-
-
-            />
+                color='#304FFE' />
         </TouchableOpacity>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
         width: 36,

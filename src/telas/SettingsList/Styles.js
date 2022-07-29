@@ -8,13 +8,11 @@ const styles = StyleSheet.create({
     },
     subContainerUm: {
         alignItems: 'center',
-
     },
     imagemPeril: {
         width: 128,
         height: 129,
         marginTop: 84
-
     },
     subContainerDois: {
         alignItems: 'center',
@@ -22,7 +20,6 @@ const styles = StyleSheet.create({
     subContainerTres: {
         marginLeft: 23,
         marginTop: 17,
-
     },
     subContainerTresView: {
         flexDirection: 'row',
@@ -57,7 +54,6 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         backgroundColor: '#rgba(0,0,0,0.6)',
-
     },
     modalViewIntern: {
         width: 375,
@@ -105,7 +101,6 @@ const styles = StyleSheet.create({
     },
     subContainerQuatro: {
         alignItems: 'center',
-
     },
     containerEditar: {
         width: 343,
@@ -133,14 +128,11 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'SourceSansPro-SemiBold',
         color: '#FFFFFF',
-
     },
     botaoTexto2: {
         fontSize: 15,
         fontFamily: 'SourceSansPro-SemiBold',
         color: '#000000',
-
-
     }
 
 });

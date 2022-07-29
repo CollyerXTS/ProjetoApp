@@ -9,17 +9,14 @@ const styles = StyleSheet.create({
     },
     subContainerUm: {
         alignItems: 'center',
-
     },
     imagemPeril: {
         width: 128,
         height: 129,
         marginTop: 84
-
     },
     containerSecundario: {
         alignItems: 'center',
-
     },
     containerBotaoFoto: {
         width: 182,
@@ -37,13 +34,11 @@ const styles = StyleSheet.create({
         fontFamily: 'SourceSansPro-Bold',
         color: 'rgba(48, 79, 254, 3)',
         fontSize: 15,
-
     },
     modalView: {
         flex: 1,
         alignContent: 'center',
         backgroundColor: 'white',
-
     },
     subContainerDois: {
         width: 36,
@@ -86,7 +81,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 7.5,
         paddingLeft: 1.9
-
     },
     modalImage: {
         height: 92,
@@ -116,7 +110,6 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontFamily: 'SourceSansPro-Bold',
         marginTop: 5
-
     },
     ContaineInputTexto: {
         width: 322,
@@ -150,17 +143,12 @@ const styles = StyleSheet.create({
         marginTop: 25,
         backgroundColor: '#304FFE',
         fontSize: 15,
-
-
     },
     textoBotaoConfirmar: {
         fontFamily: 'SourceSansPro-Bold',
         color: '#FFFFFF',
         fontSize: 15,
-
-
     }
-
 });
 
 export default styles

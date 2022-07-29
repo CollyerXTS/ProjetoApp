@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 //Navegção
 import Home from '../../telas/Home/App';
 import BottonSettings from '../../telas/SettingsList/App';
@@ -12,8 +11,6 @@ import Bottonhome from '../../componentes/Bottonhome';
 import Bottonlist from '../../componentes/Bottonlist';
 import AddCard from '../../telas/AddCard/App';
 import Perfil from '../../telas/SettingsList/Perfil/App';
-
-
 
 const Tab = createBottomTabNavigator();
 
@@ -31,8 +28,7 @@ function Rotas() {
           height: 90,
         }
       }}
-      tabBarStyle
-    >
+      tabBarStyle>
       <Tab.Screen
         name="TelaHome"
         component={Home}

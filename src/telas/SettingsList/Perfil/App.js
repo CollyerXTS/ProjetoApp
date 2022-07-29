@@ -4,12 +4,9 @@ import styles from './Style';
 import { useNavigation } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-
-
 export default function Perfil() {
     const [modalActive, setModalActive] = useState(false)
     const navigation = useNavigation();
-
     const [id, setId] = useState(null)
     const clickActiveEmoji = (key) => {
         if (key == id) {
@@ -19,7 +16,6 @@ export default function Perfil() {
             setId(key)
         }
     }
-
     return (
         <KeyboardAvoidingView style={styles.containerPrincipal}
             behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
@@ -40,19 +36,16 @@ export default function Perfil() {
                     </Text>
                 </TouchableOpacity>
             </View>
-
             <Modal
                 animationType='fade'
                 transparent={true}
-                visible={modalActive}
-            >
+                visible={modalActive}>
                 <View style={styles.modalView}>
 
                     <View style={styles.modalBotao1}>
                         <TouchableOpacity
                             style={styles.subContainerDois}
-                            onPress={() => setModalActive(false)}
-                        >
+                            onPress={() => setModalActive(false)}>
                             <Text style={styles.modalBotao1}>X
                             </Text>
                         </TouchableOpacity>
@@ -63,20 +56,17 @@ export default function Perfil() {
                         <View style={styles.subContainerModal}>
                             <View style={styles.subContainerModalInferior}>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(0)}
-                                >
+                                    onPress={() => clickActiveEmoji(0)}>
                                     <View
                                         style={[styles.containerImageCircle, { backgroundColor: id == 0 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
                                             source={require('../../../../assets/humores/happy.png')}
-
                                         />
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(1)}
-                                >
+                                    onPress={() => clickActiveEmoji(1)}>
                                     <View style={[styles.containerImageCircle, { backgroundColor: id == 1 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
@@ -85,8 +75,7 @@ export default function Perfil() {
                                     </View >
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(2)}
-                                >
+                                    onPress={() => clickActiveEmoji(2)}>
                                     <View style={[styles.containerImageCircle, { backgroundColor: id == 2 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
@@ -97,28 +86,23 @@ export default function Perfil() {
                             </View>
                             <View style={styles.subContainerModalInferior}>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(3)}
-                                >
+                                    onPress={() => clickActiveEmoji(3)}>
                                     <View style={[styles.containerImageCircle, { backgroundColor: id == 3 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
-                                            source={require('../../../../assets/humores/happy.png')}
-                                        />
+                                            source={require('../../../../assets/humores/happy.png')} />
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(4)}
-                                >
+                                    onPress={() => clickActiveEmoji(4)}>
                                     <View style={[styles.containerImageCircle, { backgroundColor: id == 4 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
-                                            source={require('../../../../assets/humores/happy.png')}
-                                        />
+                                            source={require('../../../../assets/humores/happy.png')} />
                                     </View >
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => clickActiveEmoji(5)}
-                                >
+                                    onPress={() => clickActiveEmoji(5)}>
                                     <View style={[styles.containerImageCircle, { backgroundColor: id == 5 ? '#304ffe' : 'white' }]}>
                                         <Image
                                             style={styles.modalImage}
@@ -128,11 +112,9 @@ export default function Perfil() {
                                 </TouchableOpacity>
                             </View>
                         </View>
-
                         <TouchableOpacity
                             style={styles.subContainerTres}
-                            onPress={() => setModalActive(false)}
-                        >
+                            onPress={() => setModalActive(false)}>
                             <Text
                                 style={styles.modalBotao2}>
                                 Confirmar
@@ -146,31 +128,26 @@ export default function Perfil() {
                     NOME
                 </Text >
                 <TextInput style={styles.ContaineInputTexto}
-
                     placeholder='FULANA'
-                    placeholderTextColor="#000000"
-                />
+                    placeholderTextColor="#000000" />
                 <Text style={styles.ContaineTexto}>
                     E-MAIL
                 </Text>
                 <TextInput style={styles.ContaineInputTexto}
                     placeholder='FULANINHA2@GMAIL.COM'
-                    placeholderTextColor="#000000"
-                />
+                    placeholderTextColor="#000000" />
                 <View>
                     <Text style={styles.ContaineTexto}>
                         GÊNERO
                     </Text>
                     <TextInput style={styles.ContaineInputTexto}
                         placeholder='FEMININO'
-                        placeholderTextColor="#000000"
-                    />
+                        placeholderTextColor="#000000" />
                     <TouchableOpacity style={{ position: 'absolute' }}>
                         <MaterialIcons
                             style={styles.ContaineInputIcon}
                             name='keyboard-arrow-down'
-                            color="#000000" size={50}
-                        />
+                            color="#000000" size={50} />
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.ContaineTexto}>
@@ -178,14 +155,12 @@ export default function Perfil() {
                 </Text>
                 <TextInput style={styles.ContaineInputTexto}
                     placeholder='15/12/1998'
-                    placeholderTextColor="#000000"
-                />
+                    placeholderTextColor="#000000" />
             </View>
             <View style={styles.containerQuatro}>
                 <TouchableOpacity
                     style={styles.containerBotaoConfirmar}
-                    onPress={() => navigation.navigate('BottonSettings')}
-                >
+                    onPress={() => navigation.navigate('BottonSettings')}>
                     <Text style={styles.textoBotaoConfirmar}>
                         SALVAR
                     </Text>

@@ -12,8 +12,7 @@ export default function Splash() {
                 source={require('../../../../assets/65683-notes-animation.json')} autoPlay
                 loop={false}
                 speed={0.8}
-                onAnimationFinish={() => navigation.navigate('Login')}
-            />
+                onAnimationFinish={() => navigation.navigate('Login')} />
             <Text style={styles.textoSplashLogo}>
                 Diário Pessoal
             </Text>

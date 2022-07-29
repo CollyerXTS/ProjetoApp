@@ -8,9 +8,7 @@ export default function Buttonhome({ focused }) {
             <Ionicons
                 name="ios-home"
                 size={24}
-                color={focused ? '#FFFFFF' : '#304FFE'}
-
-            />
+                color={focused ? '#FFFFFF' : '#304FFE'} />
         </View>
     )
 }

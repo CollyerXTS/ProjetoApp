@@ -29,19 +29,16 @@ export default function Centro() {
   );
 }
 
-
 const Item = ({ image, data, humor, horario, festa, festaTexto, esporte, esporteTexto, cozinhar, cozinharTexto, texto }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity style={styles.content}
       onPress={() => navigation.navigate('Card', {
         image: image, data: data, humor: humor, horario: horario, festa: festa, festaTexto: festaTexto, esporte: esporte, esporteTexto: esporteTexto, cozinhar: cozinhar, cozinharTexto: cozinharTexto, texto: texto,
-      })}
-    >
+      })}>
       <View style={styles.containerSecundario}>
         <Image style={styles.imagemHumor}
-          source={image}
-        />
+          source={image} />
         <View style={styles.subContainerUm}>
           <Text style={styles.data}>
             {data}
@@ -50,7 +47,6 @@ const Item = ({ image, data, humor, horario, festa, festaTexto, esporte, esporte
             <Text style={[styles.humor, { color: coresHumor[humor] }]}>
               {humor}
             </Text>
-
             <Text style={styles.horario}>
               {horario}
             </Text>
@@ -59,36 +55,29 @@ const Item = ({ image, data, humor, horario, festa, festaTexto, esporte, esporte
       </View>
       <View style={styles.containerTerciario}>
         <Image style={styles.festa}
-          source={festa}
-        />
+          source={festa} />
         <Text style={styles.festaTexto}>
           {festaTexto}
         </Text>
-
         <Entypo
           name='dot-single'
-          color='#000000'
-        />
+          color='#000000' />
         <Image style={styles.esporte}
-          source={esporte}
-        />
+          source={esporte} />
         <Text style={styles.esporteTexto}>
           {esporteTexto}
         </Text>
         <Entypo
           name='dot-single'
-          color='#000000'
-        />
+          color='#000000' />
         <Image style={styles.cozinhar}
-          source={cozinhar}
-        />
+          source={cozinhar} />
         <Text style={styles.cozinharTexto}>
           {cozinharTexto}
         </Text>
         <Entypo
           name='dot-single'
-          color='#000000'
-        />
+          color='#000000' />
       </View>
       <View>
         <Text style={styles.texto} numberOfLines={1}>

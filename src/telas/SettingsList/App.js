@@ -2,27 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, Modal } from 'react-native';
 import styles from './Styles';
 import { useNavigation } from '@react-navigation/native';
-import { api } from '../../services/api';
-
 
 export default function BottonSettings() {
-
   const [modalActive, setModalActive] = useState(false)
   const navigation = useNavigation();
-
   return (
     < View style={styles.containerPrincipal}>
       <View>
         <View style={styles.subContainerUm}>
           <Image style={styles.imagemPeril}
-            source={require('../../../assets/humores/happy.png')}
-
-          />
+            source={require('../../../assets/humores/happy.png')} />
         </View>
-
-
-        <View style={styles.subContainerDois}
-        >
+        <View style={styles.subContainerDois}>
           <Text style={styles.textoNome} >
             Olá, Fulana
           </Text>
@@ -37,7 +28,6 @@ export default function BottonSettings() {
               FULANA@GMAIL.COM
             </Text>
           </View>
-
           <View style={styles.subContainerTresView}>
             <Text style={styles.textoCampos2} >
               GÊNERO:
@@ -46,7 +36,6 @@ export default function BottonSettings() {
               FEMININO
             </Text>
           </View>
-
           <View style={styles.subContainerTresView}>
             <Text style={styles.textoCampos3} >
               DATA DE NASCIMENTO:
@@ -55,13 +44,11 @@ export default function BottonSettings() {
               15/12/1998
             </Text>
           </View>
-
         </View>
         <Modal
           animationType='fade'
           transparent={true}
-          visible={modalActive}
-        >
+          visible={modalActive}>
           <View style={styles.modalView}>
             <View style={styles.modalViewIntern}>
               <Text style={styles.modalTexto1}>
@@ -72,14 +59,12 @@ export default function BottonSettings() {
               </Text>
               <View style={styles.modalBotao}>
                 <TouchableOpacity
-                  onPress={() => setModalActive(false)}
-                >
+                  onPress={() => setModalActive(false)}>
                   <Text style={styles.modalBotao1}>CANCELAR
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate('Login')}
-                >
+                  onPress={() => navigation.navigate('Login')}>
                   <Text style={styles.modalBotao2}>SIM
                   </Text>
                 </TouchableOpacity>
@@ -87,26 +72,21 @@ export default function BottonSettings() {
             </View>
           </View>
         </Modal>
-
         <View style={styles.subContainerQuatro}>
           <TouchableOpacity
             style={styles.containerEditar}
-            onPress={() => navigation.navigate('Perfil')}
-          >
+            onPress={() => navigation.navigate('Perfil')}>
             <Text style={styles.botaoTexto1}>EDITAR PERFIL
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.containerSair}
-            onPress={() => setModalActive(true)}
-          >
+            onPress={() => setModalActive(true)}>
             <Text style={styles.botaoTexto2}>SAIR
             </Text>
           </TouchableOpacity>
         </View>
       </View>
-
     </View >
-
   );
 };

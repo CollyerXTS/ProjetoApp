@@ -9,8 +9,7 @@ export default function Home() {
       <Fontisto style={styles.Icon}
         name="neutral"
         size={48}
-        color="#ACACAC"
-      />
+        color="#ACACAC" />
       <Text style={styles.texto}>
         Você ainda não tem nenhum
         {'\n'}

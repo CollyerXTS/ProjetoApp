@@ -13,13 +13,11 @@ export default function voltar() {
             <Stack.Screen
                 name="Centro"
                 component={Centro}
-                options={{ headerShown: false }}
-            />
+                options={{ headerShown: false }} />
             <Stack.Screen
                 name="CardPage"
                 component={CardPage}
-                options={{ headerShown: false }}
-            />
+                options={{ headerShown: false }} />
         </Stack.Navigator>
     );
 }

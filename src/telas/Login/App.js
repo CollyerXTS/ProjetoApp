@@ -34,7 +34,6 @@ export default function Login() {
     }
   }
 
-
   useEffect(() => {
     BackHandler.addEventListener('hardwareBackPress', () => {
       return true
@@ -42,7 +41,6 @@ export default function Login() {
   }, [])
   function validacaoInput() {
     if (validarEmail() && validarSenha()) {
-
       validacaoApi()
     }
     else {
@@ -77,40 +75,30 @@ export default function Login() {
     }
   }
 
-
-
   const navigation = useNavigation();
-
   return (
 
     <KeyboardAvoidingView style={styles.containerPrincipal}
       behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 20 : 0}
-    >
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 20 : 0}>
       <Image style={styles.logo}
-        source={require('../../../assets/Login.png')}
-      />
+        source={require('../../../assets/Login.png')} />
       <View>
         <TextInput style={styles.inputEmail}
           placeholder='E-mail'
           onChangeText={value => setEmail(value)}
-          keyboardType="email-address"
-          defaultValue={'anderson@gmail.com'}
-        />
+          keyboardType="email-address" />
         <View style={styles.containerInputSenha}>
           <TextInput
             placeholder='senha'
             style={styles.inputSenha}
             value={password}
             onChangeText={value => setPassword(value)}
-            secureTextEntry={passHide}
-            defaultValue={'Anderson@123'}
-          />
+            secureTextEntry={passHide} />
           <TouchableOpacity style={styles.iconEye} onPress={() => setPassHide(!passHide)}>
             <Ionicons
               name={passHide ? 'eye' : 'eye-off'}
-              color="#304FFE" size={25}
-            />
+              color="#304FFE" size={25} />
           </TouchableOpacity>
         </View>
       </View>
@@ -120,38 +108,31 @@ export default function Login() {
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
             <MaterialCommunityIcons
               name="alert-box-outline"
               size={21}
-              color="#E24B4B"
-            />
+              color="#E24B4B" />
           </View>
           <Text style={styles.textoPoup}>
             Campo não pode ficar em branco.
@@ -172,8 +153,7 @@ export default function Login() {
       }
       <TouchableOpacity
         style={styles.containerBotao}
-        onPress={validacaoInput}
-      >
+        onPress={validacaoInput}>
         <Text style={styles.botaoTexto}>ENTRAR</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView >

@@ -8,12 +8,10 @@ export default function ButtonCenter() {
             <Entypo
                 name="plus"
                 size={35}
-                color='#FFFFFF'
-            />
+                color='#FFFFFF' />
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
         width: 52,
@@ -22,6 +20,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#304FFE',
         alignItems: 'center',
         justifyContent: 'center',
-
     }
 })

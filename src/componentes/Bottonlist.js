@@ -8,9 +8,7 @@ export default function Buttonlist({ focused }) {
             <FontAwesome5
                 name="list-ul"
                 size={22}
-                color={focused ? '#FFFFFF' : '#304FFE'}
-
-            />
+                color={focused ? '#FFFFFF' : '#304FFE'} />
         </View>
     )
 }
